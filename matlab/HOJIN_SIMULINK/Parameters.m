@@ -9,12 +9,15 @@
 
 R = 3.9;
 L = 9.35e-3;
+fs = 128;
 
 Kp = 120*L;
 Ki = 120*R;
 
 Kps = 120*L;
 Kis = 120*R;
+
+
 
 % Parameters to convert torque to current
 efficiency = 0.95;
