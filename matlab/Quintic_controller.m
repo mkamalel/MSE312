@@ -8,10 +8,10 @@
      tau = command;
      q_0=[];
      q_1=[];
-     q+2=[];
+     q_2=[];
      q_3=[];
      ed_pid = 0;
- elseif (t> T_ramp & t< T_ret)
+ elseif (t > T_ramp && t < T_ret)
      q_d = 0.5 * W_cruise * T_ramp + W_cruise * (t-T_ramp);
      qd_d = W_cruise;
      qdd_d = 0;
@@ -22,7 +22,7 @@
      q_2=[];
      q_3=[];
      ed_pid = 0;
- elseif (t>= T_ret & t< T_fin)
+ elseif (t >= T_ret && t < T_fin)
      Del = T_fin- T_ret;
      q_2 = a_ret*0.5;
      q_1 = W_cruise;
