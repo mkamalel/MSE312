@@ -17,7 +17,7 @@ L = 9.35e-3;
 
 
 % Required rotational velocity to reach x distance
-x_desired = 1.5;
+x_desired = 0.5;
 x0 = 0.277;     % Distance from where ball is launched to x = 0;
 y0 = 0.1995;
 theta_release = pi/4;
@@ -27,13 +27,14 @@ t = sqrt(0.1995 + (x_desired + x0)*tan(theta_release) / 4.905);       % Time bal
 v_x = (x_desired + x0)/t;
 v = v_x/cos(theta_release);
 W_cruise = (v/r_arm) * n;
+% W_cruise = 20;
 
 
 % Position/Quintic Control
-T_ramp = 0.2;
-T_ret = 0.4;
-T_fin = 0.6;
-a_ret = -5;
+T_ramp = 2;
+T_ret = 5;
+T_fin = 8;
+a_ret = -0.2;
 q_ret = pi/2;
 
 
