@@ -17,7 +17,7 @@ r_arm = 0.1795;
 t = sqrt(0.1995 + (x_desired + x0)*tan(theta_release) / 4.905);       % Time ball is in the air
 v_x = (x_desired + x0)/t;
 v = v_x/cos(theta_release);
-omega = v/r_arm;
+omega = (v/r_arm) * n;
 
 
 
