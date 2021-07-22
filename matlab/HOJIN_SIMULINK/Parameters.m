@@ -31,12 +31,13 @@ W_cruise = (v/r_arm) * n;
 
 
 % Position/Quintic Control
-T_ramp = 2;
-T_ret = 5;
-T_fin = 8;
+T_ramp = 0.1;
+T_ret = 0.3;
+T_fin = 2;
 a_ret = -0.2;
 q_ret = pi/2;
 
+q = 0.5*W_cruise*T_ramp + W_cruise*(T_ret - T_ramp)
 
 
 %%%VariableName:smiData
