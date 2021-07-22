@@ -7,15 +7,17 @@
 % Do not add code to this file. Do not edit the physical units shown in comments.
 
 
-R = 3.9;
-L = 9.35e-3;
-fs = 128;
+% Required rotational velocity to reach x distance
+x_desired = 1.5;
+x0 = 0.277;     % Distance from where ball is launched to x = 0;
+y0 = 0.1995;
+theta_release = pi/4;
+r_arm = 0.1795;
 
-Kp = 120*L;
-Ki = 120*R;
-
-Kps = 120*L;
-Kis = 120*R;
+t = sqrt(0.1995 + (x_desired + x0)*tan(theta_release) / 4.905);       % Time ball is in the air
+v_x = (x_desired + x0)/t;
+v = v_x/cos(theta_release);
+omega = v/r_arm;
 
 
 
@@ -23,10 +25,12 @@ Kis = 120*R;
 efficiency = 0.95;
 n = 3.75;
 kt = 0.0527;
-motor_R = 3.9;
-km = kt/sqrt(motor_R);
+Rm = 3.9;
+km = kt/sqrt(Rm);
 
+L = 9.35e-3;
 
+%{
 %%%VariableName:smiData
 
 %============= RigidTransform =============%
@@ -457,3 +461,4 @@ smiData.RevoluteJoint(1).ID = '';
 smiData.RevoluteJoint(1).Rz.Pos = -140.44465429996006;  % deg
 smiData.RevoluteJoint(1).ID = '[2664N468_METAL GEAR - 20 DEGREE PRESSURE ANGLE-1:-:QBL4208-100-1]';
 
+%}
