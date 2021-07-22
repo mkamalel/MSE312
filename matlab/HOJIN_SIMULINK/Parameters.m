@@ -6,6 +6,15 @@
 % You can modify numerical values, but avoid any other changes to this file.
 % Do not add code to this file. Do not edit the physical units shown in comments.
 
+% Parameters to convert torque to current
+efficiency = 0.95;
+n = 3.75;
+kt = 0.0527;
+Rm = 3.9;
+km = kt/sqrt(Rm);
+
+L = 9.35e-3;
+
 
 % Required rotational velocity to reach x distance
 x_desired = 1.5;
@@ -17,20 +26,18 @@ r_arm = 0.1795;
 t = sqrt(0.1995 + (x_desired + x0)*tan(theta_release) / 4.905);       % Time ball is in the air
 v_x = (x_desired + x0)/t;
 v = v_x/cos(theta_release);
-omega = (v/r_arm) * n;
+W_cruise = (v/r_arm) * n;
+
+
+% Position/Quintic Control
+T_ramp = 0.2;
+T_ret = 0.4;
+T_fin = 0.6;
+a_ret = -5;
+q_ret = pi/2;
 
 
 
-% Parameters to convert torque to current
-efficiency = 0.95;
-n = 3.75;
-kt = 0.0527;
-Rm = 3.9;
-km = kt/sqrt(Rm);
-
-L = 9.35e-3;
-
-%{
 %%%VariableName:smiData
 
 %============= RigidTransform =============%
@@ -461,4 +468,3 @@ smiData.RevoluteJoint(1).ID = '';
 smiData.RevoluteJoint(1).Rz.Pos = -140.44465429996006;  % deg
 smiData.RevoluteJoint(1).ID = '[2664N468_METAL GEAR - 20 DEGREE PRESSURE ANGLE-1:-:QBL4208-100-1]';
 
-%}
