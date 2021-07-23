@@ -23,21 +23,25 @@ y0 = 0.1995;
 theta_release = pi/4;
 r_arm = 0.1795;
 
-t = sqrt(0.1995 + (x_desired + x0)*tan(theta_release) / 4.905);       % Time ball is in the air
+t = sqrt((y0 + (x_desired + x0)*tan(theta_release)) / 4.905);       % Time ball is in the air
 v_x = (x_desired + x0)/t;
 v = v_x/cos(theta_release);
-W_cruise = (v/r_arm) * n;
-% W_cruise = 20;
+% W_cruise = (v/r_arm) * n;
+W_cruise = 20;
 
 
-% Position/Quintic Control
-T_ramp = 0.1;
-T_ret = 0.3;
-T_fin = 2;
-a_ret = -0.2;
-q_ret = pi/2;
+% Trajectory control
+% q_ret = pi/2;
+% T_ramp = 0.03;
+% T_ret = (q_ret - 0.5*W_cruise*T_ramp)/W_cruise + T_ramp;
+% T_fin = 3;
+% a_ret = -0.3;
 
-q = 0.5*W_cruise*T_ramp + W_cruise*(T_ret - T_ramp)
+q_ret = 4*pi;
+T_ramp = 2;
+T_ret = 4;
+T_fin = 3;
+a_ret = -0.3;
 
 
 %%%VariableName:smiData
