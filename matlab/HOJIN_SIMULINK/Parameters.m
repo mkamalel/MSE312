@@ -17,7 +17,7 @@ L = 9.35e-3;
 
 
 % Required rotational velocity to reach x distance
-x_desired = 0.5;
+x_desired = 1.5;
 x0 = 0.277;     % Distance from where ball is launched to x = 0;
 y0 = 0.1995;
 theta_release = pi/4;
@@ -26,22 +26,51 @@ r_arm = 0.1795;
 t = sqrt((y0 + (x_desired + x0)*tan(theta_release)) / 4.905);       % Time ball is in the air
 v_x = (x_desired + x0)/t;
 v = v_x/cos(theta_release);
-% W_cruise = (v/r_arm) * n;
-W_cruise = 20;
+W_cruise = (v/r_arm);
+% W_cruise = 20;
 
 
 % Trajectory control
-% q_ret = pi/2;
-% T_ramp = 0.03;
+% 1.5 m
+q_ret = (pi/2);
+T_ramp = 0.07;
+T_ret = (q_ret - 0.5*W_cruise*T_ramp)/W_cruise + T_ramp;
+T_fin = 0.4;
+a_ret = -0.1;
+
+% 1.2 m
+% q_ret = (pi/2);
+% T_ramp = 0.05;
 % T_ret = (q_ret - 0.5*W_cruise*T_ramp)/W_cruise + T_ramp;
+% T_fin = 0.4;
+% a_ret = -0.1;
+% Ki = 1.5;
+% Kp = 0.5;
+% Kd = 100;
+
+
+
+% 0.5 m
+% q_ret = (pi/2);
+% T_ramp = 0.05;
+% T_ret = (q_ret - 0.5*W_cruise*T_ramp)/W_cruise + T_ramp;
+% T_fin = 0.4;
+% a_ret = -0.1;
+% Ki = 1.5;
+% Kp = 0.5;
+% Kd = 100;
+
+% q_ret = (pi/2)*n;
+% T_ramp = 0.1;
+% T_ret = (q_ret - 0.5*W_cruise*T_ramp)/W_cruise + T_ramp;
+% T_fin = 0.6;
+% a_ret = -1;
+
+% q_ret = 4*pi;
+% T_ramp = 2;
+% T_ret = 4;
 % T_fin = 3;
 % a_ret = -0.3;
-
-q_ret = 4*pi;
-T_ramp = 2;
-T_ret = 4;
-T_fin = 3;
-a_ret = -0.3;
 
 
 %%%VariableName:smiData
