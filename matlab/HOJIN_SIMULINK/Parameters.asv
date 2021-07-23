@@ -19,8 +19,8 @@ Jarm = 2.3e-3;
 
 % Required rotational velocity to reach x distance
 x_desired = 1.5;
-x0 = 0.4795;     % Distance from where ball is launched to x = 0;
-y0 = 0.19672;
+x0 = 0.277;     % Distance from where ball is launched to x = 0;
+y0 = 0.1995;
 theta_release = pi/4;
 r_arm = 0.1795;
 
