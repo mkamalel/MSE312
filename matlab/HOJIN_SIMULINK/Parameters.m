@@ -28,7 +28,7 @@ t = sqrt((y0 + (x_desired + x0)*tan(theta_release)) / 4.905);       % Time ball 
 v_x = (x_desired + x0)/t;
 v = v_x/cos(theta_release);
 W_cruise = (v/r_arm);
-% W_cruise = 20;
+
 
 
 % Trajectory control
@@ -38,16 +38,17 @@ T_ramp = 0.07;
 T_ret = (q_ret - 0.5*W_cruise*T_ramp)/W_cruise + T_ramp;
 T_fin = 0.4;
 a_ret = -0.9;
+Ki = 300;
+Kp = 7;
+Kd = 300;
+
 
 % 1.2 m
 % q_ret = (pi/2);
 % T_ramp = 0.05;
 % T_ret = (q_ret - 0.5*W_cruise*T_ramp)/W_cruise + T_ramp;
 % T_fin = 0.4;
-% a_ret = -0.1;
-% Ki = 1.5;
-% Kp = 0.5;
-% Kd = 100;
+% a_ret = -0.9;
 
 
 
@@ -56,22 +57,7 @@ a_ret = -0.9;
 % T_ramp = 0.05;
 % T_ret = (q_ret - 0.5*W_cruise*T_ramp)/W_cruise + T_ramp;
 % T_fin = 0.4;
-% a_ret = -0.1;
-% Ki = 1.5;
-% Kp = 0.5;
-% Kd = 100;
-
-% q_ret = (pi/2)*n;
-% T_ramp = 0.1;
-% T_ret = (q_ret - 0.5*W_cruise*T_ramp)/W_cruise + T_ramp;
-% T_fin = 0.6;
-% a_ret = -1;
-
-% q_ret = 4*pi;
-% T_ramp = 2;
-% T_ret = 4;
-% T_fin = 3;
-% a_ret = -0.3;
+% a_ret = -0.9;
 
 
 %%%VariableName:smiData
