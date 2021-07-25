@@ -9,13 +9,14 @@
 % Parameters to convert torque to current
 efficiency = 0.95;
 n = 3.75;
-kt = 0.0527;
-Rm = 3.9;
+kt = 0.059;
+Rm = 0.7;
+Lm = 1.05e-3;
 km = kt/sqrt(Rm);
 
-L = 9.35e-3;
-
-Jarm = 2.3e-3;
+J_rotor = 0.0000795;
+J_arm = 2.3e-3;
+J_load = J_rotor + J_arm;
 
 % Required rotational velocity to reach x distance
 x_desired = 1.5;
@@ -37,10 +38,10 @@ q_ret = (pi/2);
 T_ramp = 0.07;
 T_ret = (q_ret - 0.5*W_cruise*T_ramp)/W_cruise + T_ramp;
 T_fin = 0.4;
-a_ret = -0.9;
-Ki = 300;
-Kp = 7;
-Kd = 300;
+a_ret = -0.1;
+% Ki = 300;
+% Kp = 7;
+% Kd = 300;
 
 
 % 1.2 m
