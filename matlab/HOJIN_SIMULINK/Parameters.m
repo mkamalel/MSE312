@@ -6,6 +6,11 @@
 % You can modify numerical values, but avoid any other changes to this file.
 % Do not add code to this file. Do not edit the physical units shown in comments.
 
+F_sampling = 128;
+Angle_noise = 0.000001;
+Velocity_noise = 0.0002;
+Current_noise = 0.0001;
+
 % Parameters to convert torque to current
 efficiency = 0.95;
 n = 3.75;
