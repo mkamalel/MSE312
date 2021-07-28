@@ -1,87 +1,10 @@
-% Simscape(TM) Multibody(TM) version: 6.0
+% Simscape(TM) Multibody(TM) version: 7.3
 
 % This is a model data file derived from a Simscape Multibody Import XML file using the smimport function.
 % The data in this file sets the block parameter values in an imported Simscape Multibody model.
 % For more information on this file, see the smimport function help page in the Simscape Multibody documentation.
 % You can modify numerical values, but avoid any other changes to this file.
 % Do not add code to this file. Do not edit the physical units shown in comments.
-
-F_sampling = 128;
-Angle_noise = 0.000001;
-Velocity_noise = 0.0002;
-Current_noise = 0.0001;
-
-% Parameters to convert torque to current
-efficiency = 0.95;
-n = 3.75;
-kt = 0.0527;
-Rm = 3.9;
-km = kt/sqrt(Rm);
-
-L = 9.35e-3;
-
-% Initial Starting Position of ball (from origin (0,0))
-% y = -50.76170619 mm
-% x = -434.70384182 mm
-
-% Position where ball is through (from origin (0,0))
-% y = 204.50384657 mm
-% x = -420.56170619 mm
-
-% Required rotational velocity to reach x distance
-x_desired = 1.5;
-r_arm = 0.1805;
-x0 = 0.42056170619;     % Distance from where ball is launched to x = 0;
-y0 = 0.20450384182;
-theta_release = pi/4;
-
-
-t = sqrt((y0 + (x_desired + x0)*tan(theta_release)) / 4.905);       % Time ball is in the air
-v_x = (x_desired + x0)/t;
-v = v_x/cos(theta_release);
-W_cruise = (v/r_arm); 
-
-% Ball
-m_ball = 0.145;
-r_ball = 0.0315;
-J_ball = (2/5)*m_ball*r_ball^2;
-
-J_rotor = 0.0000795; %kgm^2
-J_arm = 0.0022994846; %kgm^2
-
-J_load = J_arm + (J_ball + m_ball*r_arm^2);
-
-
-% Trajectory control
-% 1.5 m
-q_ret = (pi/2);
-T_ramp = 0.07;
-T_ret = (q_ret - 0.5*W_cruise*T_ramp)/W_cruise + T_ramp;
-T_fin = 0.4;
-a_ret = -0.9;
-% Ki = 300;
-% Kp = 7;
-% Kd = 300;
-
-
-% 1.2 m
-% q_ret = (pi/2);
-% T_ramp = 0.05;
-% T_ret = (q_ret - 0.5*W_cruise*T_ramp)/W_cruise + T_ramp;
-% T_fin = 0.4;
-% a_ret = -0.9;
-
-
-
-% 0.5 m
-% q_ret = (pi/2);
-% T_ramp = 0.05;
-% T_ret = (q_ret - 0.5*W_cruise*T_ramp)/W_cruise + T_ramp;
-% T_fin = 0.4;
-% a_ret = -0.9;
-
-
-
 
 %%%VariableName:smiData
 
@@ -667,5 +590,4 @@ smiData.RevoluteJoint(1).ID = '';
 
 smiData.RevoluteJoint(1).Rz.Pos = 135.00000000000011;  % deg
 smiData.RevoluteJoint(1).ID = '[2031N210_MOUNTED OPEN NEEDLE-ROLLER BEARING-1:-:1439K411_1045 Carbon Steel Keyed Rotary Shaft-1]';
-
 
