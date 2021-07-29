@@ -12,7 +12,7 @@ Velocity_noise = 0.0002;
 Current_noise = 0.0001;
 
 % Parameters to convert torque to current
-efficiency = 0.95;
+efficiency = 0.75;
 n = 3.75;
 kt = 0.0527;
 Rm = 3.9;
@@ -49,35 +49,33 @@ J_ball = (2/5)*m_ball*r_ball^2;
 J_rotor = 0.0000795; %kgm^2
 J_arm = 0.0022994846; %kgm^2
 
-J_load = J_arm + (J_ball + m_ball*r_arm^2);
+% J_load = J_arm + (J_ball + m_ball*r_arm^2) + J_rotor;
+J_load = J_arm + J_rotor;
 
 
 % Trajectory control
 % 1.5 m
 q_ret = (pi/2);
-T_ramp = 0.07;
+T_ramp = 0.065;
 T_ret = (q_ret - 0.5*W_cruise*T_ramp)/W_cruise + T_ramp;
-T_fin = 0.4;
-a_ret = -0.9;
-% Ki = 300;
-% Kp = 7;
-% Kd = 300;
+T_fin = 0.3;
+a_ret = -0.1;
 
 
 % 1.2 m
 % q_ret = (pi/2);
-% T_ramp = 0.05;
+% T_ramp = 0.07;
 % T_ret = (q_ret - 0.5*W_cruise*T_ramp)/W_cruise + T_ramp;
-% T_fin = 0.4;
+% T_fin = 0.3;
 % a_ret = -0.9;
 
 
 
 % 0.5 m
 % q_ret = (pi/2);
-% T_ramp = 0.05;
+% T_ramp = 0.06;
 % T_ret = (q_ret - 0.5*W_cruise*T_ramp)/W_cruise + T_ramp;
-% T_fin = 0.4;
+% T_fin = 0.3;
 % a_ret = -0.9;
 
 
