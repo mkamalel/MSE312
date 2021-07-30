@@ -1,5 +1,0 @@
-%implements s4_b0_1gu2k_ModuleConstants "C"
-
-%function ModuleConstants(block) Output
-
-%endfunction
