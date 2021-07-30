@@ -30,7 +30,7 @@ y0 = -0.02848783783;
 % x = -398.28784259 mm
 
 % Required rotational velocity to reach x distance
-x_desired = 0.5;
+x_desired = 1.5;
 r_arm = 0.1805;
 x_launch = 0.39828784259;     % Distance from where ball is launched to x = 0;
 y_launch = 0.22677771018;
@@ -56,11 +56,11 @@ J_load = J_arm + J_rotor;
 
 % Trajectory control
 % 1.5 m
-% q_ret = (pi/2);
-% T_ramp = 0.1;
-% T_ret = (q_ret - 0.5*W_cruise*T_ramp)/W_cruise + T_ramp;
-% T_fin = 0.3;
-% a_ret = -0.1;
+q_ret = (pi/2);
+T_ramp = 0.1;
+T_ret = (q_ret - 0.5*W_cruise*T_ramp)/W_cruise + T_ramp;
+T_fin = 0.3;
+a_ret = -0.1;
 
 
 % 1.2 m
@@ -73,11 +73,11 @@ J_load = J_arm + J_rotor;
 
 
 % 0.5 m
-q_ret = (pi/2);
-T_ramp = 0.06;
-T_ret = (q_ret - 0.5*W_cruise*T_ramp)/W_cruise + T_ramp;
-T_fin = 0.3;
-a_ret = -0.9;
+% q_ret = (pi/2);
+% T_ramp = 0.06;
+% T_ret = (q_ret - 0.5*W_cruise*T_ramp)/W_cruise + T_ramp;
+% T_fin = 0.3;
+% a_ret = -0.9;
 
 
 
