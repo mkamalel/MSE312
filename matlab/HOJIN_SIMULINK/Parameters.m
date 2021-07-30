@@ -20,24 +20,25 @@ km = kt/sqrt(Rm);
 
 L = 9.35e-3;
 
-% Initial Starting Position of ball (from origin (0,0))
-% y = -50.76170619 mm
-% x = -434.70384182 mm
+% Initial Starting Position of ball COM (from origin (0,0))
+x0 = -0.45697770542;
+y0 = -0.02848783783;
 
-% Position where ball is through (from origin (0,0))
-% y = 204.50384657 mm
-% x = -420.56170619 mm
+
+% Position where ball COM is thrown (from origin (0,0))
+% y = 226.77771018 mm
+% x = -398.28784259 mm
 
 % Required rotational velocity to reach x distance
-x_desired = 1.5;
+x_desired = 0.5;
 r_arm = 0.1805;
-x0 = 0.42056170619;     % Distance from where ball is launched to x = 0;
-y0 = 0.20450384182;
+x_launch = 0.39828784259;     % Distance from where ball is launched to x = 0;
+y_launch = 0.22677771018;
 theta_release = pi/4;
 
 
-t = sqrt((y0 + (x_desired + x0)*tan(theta_release)) / 4.905);       % Time ball is in the air
-v_x = (x_desired + x0)/t;
+t = sqrt((y_launch + (x_desired + x_launch)*tan(theta_release)) / 4.905);       % Time ball is in the air
+v_x = (x_desired + x_launch)/t;
 v = v_x/cos(theta_release);
 W_cruise = (v/r_arm); 
 
@@ -49,17 +50,17 @@ J_ball = (2/5)*m_ball*r_ball^2;
 J_rotor = 0.0000795; %kgm^2
 J_arm = 0.0022994846; %kgm^2
 
-J_load = J_arm + (J_ball + m_ball*r_arm^2) + J_rotor;
-% J_load = J_arm + J_rotor;
+% J_load = J_arm + (J_ball + m_ball*r_arm^2) + J_rotor;
+J_load = J_arm + J_rotor;
 
 
 % Trajectory control
 % 1.5 m
-q_ret = (pi/2);
-T_ramp = 0.1;
-T_ret = (q_ret - 0.5*W_cruise*T_ramp)/W_cruise + T_ramp;
-T_fin = 0.3;
-a_ret = -0.1;
+% q_ret = (pi/2);
+% T_ramp = 0.1;
+% T_ret = (q_ret - 0.5*W_cruise*T_ramp)/W_cruise + T_ramp;
+% T_fin = 0.3;
+% a_ret = -0.1;
 
 
 % 1.2 m
@@ -72,11 +73,11 @@ a_ret = -0.1;
 
 
 % 0.5 m
-% q_ret = (pi/2);
-% T_ramp = 0.06;
-% T_ret = (q_ret - 0.5*W_cruise*T_ramp)/W_cruise + T_ramp;
-% T_fin = 0.3;
-% a_ret = -0.9;
+q_ret = (pi/2);
+T_ramp = 0.06;
+T_ret = (q_ret - 0.5*W_cruise*T_ramp)/W_cruise + T_ramp;
+T_fin = 0.3;
+a_ret = -0.9;
 
 
 
@@ -410,8 +411,10 @@ smiData.RigidTransform(45).ID = 'RootGround[Base_Feet_1-1]';
 %Translation Method - Cartesian
 %Rotation Method - Arbitrary Axis
 smiData.RigidTransform(46).translation = [-293.52770542341341 -28.487842584930185 -38.400000000000041];  % mm
-smiData.RigidTransform(46).angle = 1.7177715174584023;  % rad
-smiData.RigidTransform(46).axis = [-0.35740674433659386 0.86285620946101615 0.3574067443365942];
+% smiData.RigidTransform(46).angle = 1.7177715174584023;  % rad
+% smiData.RigidTransform(46).axis = [-0.35740674433659386 0.86285620946101615 0.3574067443365942];
+smiData.RigidTransform(46).angle = 0;  % rad
+smiData.RigidTransform(46).axis = [0 0 0];
 smiData.RigidTransform(46).ID = 'SixDofRigidTransform[Lacrosse Ball-1]';
 
 
