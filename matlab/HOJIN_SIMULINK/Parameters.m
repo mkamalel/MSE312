@@ -71,14 +71,12 @@ a_ret = -0.1;
 % a_ret = -0.9;
 
 
-
 % 0.5 m
 % q_ret = (pi/2);
 % T_ramp = 0.06;
 % T_ret = (q_ret - 0.5*W_cruise*T_ramp)/W_cruise + T_ramp;
 % T_fin = 0.3;
 % a_ret = -0.9;
-
 
 
 

@@ -2,7 +2,7 @@ ball_y = out.ball_y;
 ball_x = out.ball_x;
 
 % Location where ball hits the ground (y = 0)
-y_threshold = -y0;
+y_threshold = -y0 + r_ball;
 y_threshold_upper = y_threshold + 0.001;
 y_threshold_lower = y_threshold - 0.001;
 
