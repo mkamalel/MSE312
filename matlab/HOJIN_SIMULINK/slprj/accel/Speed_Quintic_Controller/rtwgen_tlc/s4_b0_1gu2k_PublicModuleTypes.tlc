@@ -1,0 +1,21 @@
+%implements s4_b0_1gu2k_PublicModuleTypes "C"
+
+%function PublicModuleTypes(block) Output
+
+#ifndef typedef_mode_Speed_Quintic_Controller_T
+#define typedef_mode_Speed_Quintic_Controller_T
+typedef int32_T mode_Speed_Quintic_Controller_T;
+#endif /* typedef_mode_Speed_Quintic_Controller_T */
+
+#ifndef mode_constants
+#define mode_constants
+
+/* enum mode */
+#define MODE_ZERO_DB (-2)
+#define MODE_NEG_ENGAGED (-1)
+#define MODE_DISENGAGED (0)
+#define MODE_POS_ENGAGED (1)
+
+#endif /* mode_constants */
+
+%endfunction
