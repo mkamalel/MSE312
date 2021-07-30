@@ -50,8 +50,8 @@ J_ball = (2/5)*m_ball*r_ball^2;
 J_rotor = 0.0000795; %kgm^2
 J_arm = 0.0022994846; %kgm^2
 
-% J_load = J_arm + (J_ball + m_ball*r_arm^2) + J_rotor;
-J_load = J_arm + J_rotor;
+J_load = J_arm + (J_ball + m_ball*r_arm^2) + J_rotor;
+% J_load = J_arm + J_rotor;
 
 
 % Trajectory control
