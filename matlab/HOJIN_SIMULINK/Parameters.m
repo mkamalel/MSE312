@@ -18,7 +18,7 @@ kt = 0.0527;
 Rm = 3.9;
 km = kt/sqrt(Rm);
 
-L = 9.35e-3;
+Lm = 9.35e-3;
 
 % Initial Starting Position of ball COM (from origin (0,0))
 x0 = -0.45697770542;
@@ -27,7 +27,6 @@ y0 = -0.02848783783;
 r_arm = 0.1805;
 x_launch = 0.39828784259;     % Distance from where ball is launched to x = 0;
 y_launch = 0.22677771018;
-theta_release = pi/4;
 
 % Ball
 m_ball = 0.145;
@@ -38,10 +37,33 @@ J_rotor = 0.0000795; %kgm^2
 J_arm = 0.0022994846; %kgm^2
 
 J_load = J_arm + (J_ball + m_ball*r_arm^2) + J_rotor;
+% J_load = J_arm + J_rotor;
+
 
 % Position where ball COM is thrown (from origin (0,0))
 % y = 226.77771018 mm
 % x = -398.28784259 mm
+
+% x_desired = 1.50;
+% r_arm = 0.1805;
+% x_launch = 0.39828784259;     % Distance from where ball is launched to x = 0;
+% y_launch = 0.22677771018;
+% theta_release = pi/4;
+% 
+% 
+% t = sqrt((y_launch + (x_desired + x_launch)*tan(theta_release)) / 4.905);       % Time ball is in the air
+% v_x = (x_desired + x_launch)/t;
+% v = v_x/cos(theta_release);
+% W_cruise = (v/r_arm); 
+% 
+% 
+% % Trajectory control
+% % 1.5 m
+% q_ret = (pi/2);
+% T_ramp = 0.08;
+% T_ret = (q_ret - 0.5*W_cruise*T_ramp)/W_cruise + T_ramp;
+% T_fin = 0.4;
+% a_ret = -0.1;
 
 
 %%%VariableName:smiData
