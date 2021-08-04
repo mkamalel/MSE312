@@ -1,6 +1,10 @@
 ball_y = out.ball_y;
 ball_x = out.ball_x;
 
+% plot(ball_x.Data, ball_y.Data)
+% hold on;
+% plot(58.68986284e-3, 255.26554801e-3, 'x')
+
 % Location where ball hits the ground (y = 0)
 y_threshold = -y0;
 y_threshold_upper = y_threshold + 0.0001;
