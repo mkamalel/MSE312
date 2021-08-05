@@ -43,25 +43,25 @@ J_load = J_arm + (J_ball + m_ball*r_arm^2) + J_rotor;
 % y = 226.77771018 mm
 % x = -398.28784259 mm
 
-x_desired = 0.2;
-
-r_arm = 0.1805;
-x_launch = 0.39828784259;     % Distance from where ball is launched to x = 0;
-y_launch = 0.22677771018;
-theta_release = pi/4;
-
-t = sqrt((y_launch + (x_desired + x_launch)*tan(theta_release)) / 4.905);       % Time ball is in the air
-v_x = (x_desired + x_launch)/t;
-v = v_x/cos(theta_release); 
-
-% Trajectory control
+% x_desired = 0.4;
 % 
-W_cruise = (v/r_arm); 
-q_ret = pi/2;
-T_ramp = 0.1;
-T_ret = (q_ret - 0.5*W_cruise*T_ramp)/W_cruise + T_ramp;
-T_fin = T_ret + 0.2;
-a_ret = -100;
+% r_arm = 0.1805;
+% x_launch = 0.39828784259;     % Distance from where ball is launched to x = 0;
+% y_launch = 0.22677771018;
+% theta_release = pi/4;
+% 
+% t = sqrt((y_launch + (x_desired + x_launch)*tan(theta_release)) / 4.905);       % Time ball is in the air
+% v_x = (x_desired + x_launch)/t;
+% v = v_x/cos(theta_release); 
+% 
+% % Trajectory control
+% % 
+% W_cruise = (v/r_arm); 
+% q_ret = pi/2;
+% T_ramp = 0.1;
+% T_ret = (q_ret - 0.5*W_cruise*T_ramp)/W_cruise + T_ramp;
+% T_fin = T_ret + 0.15;
+% a_ret = -100;
 
 
 
