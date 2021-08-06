@@ -27,19 +27,11 @@ J_load = J_arm + (J_ball + m_ball*r_arm^2) + J_rotor;
 
 
 
-
-
-% r_arm = 0.1805;
-% x_launch = 0.39828784259;     % Distance from where ball is launched to x = 0;
-% y_launch = 0.22677771018;
-% theta_release = pi/4;
-% 
-% 
-% W_cruise = 89;
+% W_cruise = 50;
 % q_ret = pi/2;
-% T_ramp = 0.035;
+% T_ramp = 0.062;
 % T_ret = (q_ret - 0.5*W_cruise*T_ramp)/W_cruise + T_ramp;
-
+% T_fin = 0.1;
 
 
 
