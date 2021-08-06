@@ -26,13 +26,18 @@ r_arm = 0.1805;
 J_load = J_arm + (J_ball + m_ball*r_arm^2) + J_rotor;
 
 
+% Current Controller
+kp_c = 23;
+ki_c = 100;
 
-% W_cruise = 50;
-% q_ret = pi/2;
-% T_ramp = 0.062;
-% T_ret = (q_ret - 0.5*W_cruise*T_ramp)/W_cruise + T_ramp;
-% T_fin = 0.1;
+% Speed Controller
+kp_s = 10;
+ki_s = 4;
 
+% Quintic Trajectory Controller
+kp_q = 65;
+ki_q = 0.01;
+kd_q = 400;
 
 
 % Simscape model

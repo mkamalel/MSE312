@@ -25,7 +25,18 @@ J_arm = 0.0022994846; %kgm^2
 r_arm = 0.1805;
 J_load = J_arm + (J_ball + m_ball*r_arm^2) + J_rotor;
 
+% Current Controller
+kp_c = 23;
+ki_c = 100;
 
+% Speed Controller
+kp_s = 10;
+ki_s = 4;
+
+% Quintic Trajectory Controller
+kp_q = 10;
+ki_q = 0.01;
+kd_q = 400;
 
 % a_ret = -100;
 % W_cruise = 35;

@@ -4,7 +4,7 @@ warning('off','sm:sli:setup:compile:LocalSolverNotSupported')
 open_system('Quintic_Controller_max_distance')
 run('Parameters.m')
 
-Simulation_Time = [0.95, 1.3];
+Simulation_Time = [0.95, 1.5];
 
 i = 1;
 range_results = [];
