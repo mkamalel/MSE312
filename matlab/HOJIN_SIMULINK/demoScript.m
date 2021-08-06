@@ -1,3 +1,6 @@
+% Turns off a warning message
+% warning('off','sm:sli:setup:compile:LocalSolverNotSupported')
+
 open_system('Quintic_Controller')
 run('Parameters.m')
 
@@ -12,7 +15,7 @@ for x_desired = [0.37, 1.01, 1.35]
     output = sim('Quintic_Controller', Simulation_Time);
     
     x_landing = getBallPos(output.ball_y, output.ball_x);
-    y_max = max(output.ball_y.data());
+    y_max = max(output.ball_y.data()) - 0.02848783783;
     
     total_power = output.total_power.data(find(output.total_power.data(), 1, 'last'));
     return_time = output.return_time.data(find(output.return_time.data(), 1, 'last'));
@@ -30,9 +33,3 @@ for x_desired = [0.37, 1.01, 1.35]
     i = i+1;
 
 end
-
-
-   
-
-% Turns off a warning message
-% warning('off','sm:sli:setup:compile:LocalSolverNotSupported')

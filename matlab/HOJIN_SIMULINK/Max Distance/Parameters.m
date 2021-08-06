@@ -27,14 +27,12 @@ J_load = J_arm + (J_ball + m_ball*r_arm^2) + J_rotor;
 
 
 
-% W_cruise = 40;
-% q_ret = 25/36*pi;
-% T_ramp = 0.08;
+% a_ret = -100;
+% W_cruise = 35;
+% q_ret = 4/9*pi;
+% T_ramp = 0.07;
 % T_ret = (q_ret - 0.5*W_cruise*T_ramp)/W_cruise + T_ramp;
-% T_fin = 0.2;
-
-
-
+% T_fin = 0.15;
 
 % Simscape model
 %Initialize the RigidTransform structure array by filling in null values.
