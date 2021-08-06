@@ -6,7 +6,7 @@ Simulation_Time = 0.65;
 i = 1;
 range_results = [];
 
-for x_desired = [0.47, 0.66, 1.29]
+for x_desired = [0.37, 1.01, 1.35]
     
     set_param('Quintic_Controller/x_desired','Value', num2str(x_desired));
     output = sim('Quintic_Controller', Simulation_Time);
