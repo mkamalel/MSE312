@@ -5,7 +5,7 @@ open_system('Quintic_Controller')
 run('Parameters.m')
 
 
-Simulation_Time = [0.56, 0.6, 0.65];    % Simulation times for 0.5, 1.2, 1.5 m
+Simulation_Time = 1;    % Simulation times for 0.5, 1.2, 1.5 m
 
 i = 1;
 range_results = [];
@@ -13,7 +13,7 @@ range_results = [];
 for x_desired = [0.30, 1.01, 1.35]
     
     set_param('Quintic_Controller/x_desired','Value', num2str(x_desired));
-    output = sim('Quintic_Controller', Simulation_Time(i));
+    output = sim('Quintic_Controller', Simulation_Time);
     
     x_landing = getBallPos(output.ball_y, output.ball_x);
     y_max = max(output.ball_y.data()) - 0.02848783783;
