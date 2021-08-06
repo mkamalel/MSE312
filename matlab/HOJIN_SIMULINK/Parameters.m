@@ -1,11 +1,3 @@
-% Simscape(TM) Multibody(TM) version: 6.0
-
-% This is a model data file derived from a Simscape Multibody Import XML file using the smimport function.
-% The data in this file sets the block parameter values in an imported Simscape Multibody model.
-% For more information on this file, see the smimport function help page in the Simscape Multibody documentation.
-% You can modify numerical values, but avoid any other changes to this file.
-% Do not add code to this file. Do not edit the physical units shown in comments.
-
 F_sampling = 128;
 Angle_noise = 0.000001;
 Velocity_noise = 0.000001;
@@ -23,10 +15,6 @@ km = kt/sqrt(Rm);   % Motor Constant
 x0 = -0.45697770542;
 y0 = -0.02848783783;
 
-r_arm = 0.1805;
-x_launch = 0.39828784259;     % Distance from where ball is launched to x = 0;
-y_launch = 0.22677771018;
-
 % Ball
 m_ball = 0.145;
 r_ball = 0.0315;
@@ -34,40 +22,28 @@ J_ball = (2/5)*m_ball*r_ball^2;
 
 J_rotor = 0.0000795; %kgm^2
 J_arm = 0.0022994846; %kgm^2
-
+r_arm = 0.1805;
 J_load = J_arm + (J_ball + m_ball*r_arm^2) + J_rotor;
-% J_load = J_arm + J_rotor;
 
 
-% Position where ball COM is thrown (from origin (0,0))
-% y = 226.77771018 mm
-% x = -398.28784259 mm
 
-% x_desired = 0.4;
-% 
+
+
 % r_arm = 0.1805;
 % x_launch = 0.39828784259;     % Distance from where ball is launched to x = 0;
 % y_launch = 0.22677771018;
 % theta_release = pi/4;
 % 
-% t = sqrt((y_launch + (x_desired + x_launch)*tan(theta_release)) / 4.905);       % Time ball is in the air
-% v_x = (x_desired + x_launch)/t;
-% v = v_x/cos(theta_release); 
 % 
-% % Trajectory control
-% % 
-% W_cruise = (v/r_arm); 
+% W_cruise = 89;
 % q_ret = pi/2;
-% T_ramp = 0.1;
+% T_ramp = 0.035;
 % T_ret = (q_ret - 0.5*W_cruise*T_ramp)/W_cruise + T_ramp;
-% T_fin = T_ret + 0.15;
-% a_ret = -100;
 
 
 
 
-%%%VariableName:smiData
-
+% Simscape model
 %Initialize the RigidTransform structure array by filling in null values.
 smiData.RigidTransform(48).translation = [0.0 0.0 0.0];
 smiData.RigidTransform(48).angle = 0.0;

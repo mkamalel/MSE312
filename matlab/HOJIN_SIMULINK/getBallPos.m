@@ -2,6 +2,7 @@ function [x_pos] = getBallPos(ball_y, ball_x)
 
 x0 = -0.45697770542;
 y0 = -0.02848783783;
+
 % Location where ball hits the ground (y = 0)
 y_threshold = -y0;
 y_threshold_upper = y_threshold + 0.0001;
