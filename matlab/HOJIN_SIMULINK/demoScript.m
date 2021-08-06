@@ -30,31 +30,39 @@ for x_desired = [0.30, 1.01, 1.35]
     fprintf(('total_power = %.2f W\n'), total_power);
     fprintf(('return_time = %.2f s\n'), return_time);
     
+    %figure();
+    %plot_title = sprintf("Test %d | x desired: %.2f | x landing = %.2f | y max = %.2f | total power = %.2f | return time = %.2f",...
+                        %i, x_desired, x_landing, y_max, total_power, return_time);
+
+    %plot(output.ball_x.Data+x0, output.ball_y.Data+y0);
+    %title(plot_title);
+    %ylabel('Y position (m)');
+    %xlabel('X position (m)');
+    
     figure();
+    %plot_title = sprintf("Test %d", i);
+    subplot(2,2,1)
     plot_title = sprintf("Test %d | x desired: %.2f | x landing = %.2f | y max = %.2f | total power = %.2f | return time = %.2f",...
                         i, x_desired, x_landing, y_max, total_power, return_time);
 
     plot(output.ball_x.Data+x0, output.ball_y.Data+y0);
-    title(plot_title);
+    title("Ball Trajectory");
     ylabel('Y position (m)');
     xlabel('X position (m)');
-    
-    figure();
-    plot_title = sprintf("Test %d", i);
-    
-    subplot(3,1,1)
+        
+    subplot(2,2,2)
     plot(output.arm_pos);
     title("Arm Position");
     ylabel('Angular Position (rad)');
     xlabel('Time (s)');    
 
-    subplot(3,1,2)
+    subplot(2,2,3)
     plot(output.arm_vel);
     title("Arm Velocity");
     ylabel('Angular Speed (rad/s)');
     xlabel('Time (s)');    
 
-    subplot(3,1,3)
+    subplot(2,2,4)
     plot(output.arm_accel);
     title("Arm Acceleration");
     ylabel('Angular Acceleration (rad/s2)');
