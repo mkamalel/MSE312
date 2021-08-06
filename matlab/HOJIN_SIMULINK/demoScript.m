@@ -1,5 +1,5 @@
 % Turns off a warning message
-% warning('off','sm:sli:setup:compile:LocalSolverNotSupported')
+warning('off','sm:sli:setup:compile:LocalSolverNotSupported')
 
 open_system('Quintic_Controller')
 run('Parameters.m')
