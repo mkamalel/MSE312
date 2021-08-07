@@ -25,6 +25,7 @@ J_arm = 0.0022994846; %kgm^2
 r_arm = 0.1805;
 J_load = J_arm + (J_ball + m_ball*r_arm^2) + J_rotor;
 
+plot(range_results(:,3))
 
 % Current Controller
 kp_c = 23;
@@ -35,9 +36,10 @@ kp_s = 10;
 ki_s = 4;
 
 % Quintic Trajectory Controller
-kp_q = 65;
-ki_q = 0.01;
-kd_q = 400;
+kp_q = 80;
+ki_q = 5;
+kd_q = 800;
+
 
 
 % Simscape model
@@ -396,6 +398,67 @@ smiData.Solid(16).color = [0.0 0.0 0.0];
 smiData.Solid(16).opacity = 0.0;
 smiData.Solid(16).ID = '';
 
+
+%Inertia Type - Custom
+%Visual Properties - Simple
+smiData.Solid(13).mass = 0.14499999999999999;  % kg
+smiData.Solid(13).CoM = [0 0 0];  % mm
+smiData.Solid(13).MoI = [57.5505 57.550500000000014 57.5505];  % kg*mm^2
+smiData.Solid(13).PoI = [0 0 0];  % kg*mm^2
+smiData.Solid(13).color = [0.75294117647058822 0.75294117647058822 0.75294117647058822];
+smiData.Solid(13).opacity = 1;
+smiData.Solid(13).ID = 'Lacrosse Ball*:*Default';
+
+%Inertia Type - Custom
+%Visual Properties - Simple
+smiData.Solid(14).mass = 0.067176850047562575;  % kg
+smiData.Solid(14).CoM = [-1.0608973298934486e-07 -0.0059822809684237973 112.23915220572029];  % mm
+smiData.Solid(14).MoI = [287.05894052465658 286.03805179566132 3.5418154905399053];  % kg*mm^2
+smiData.Solid(14).PoI = [0.042101897998037714 5.8143642514866937e-07 -3.866476531164517e-08];  % kg*mm^2
+smiData.Solid(14).color = [0.792156862745098 0.81960784313725488 0.93333333333333335];
+smiData.Solid(14).opacity = 1;
+smiData.Solid(14).ID = 'Arm_Rod*:*Default';
+
+%Inertia Type - Custom
+%Visual Properties - Simple
+smiData.Solid(9).mass = 0.0055499999999999994;  % kg
+smiData.Solid(9).CoM = [0 0 2.5];  % mm
+smiData.Solid(9).MoI = [0.11562499999999998 2.5442124999999991 2.6367124999999998];  % kg*mm^2
+smiData.Solid(9).PoI = [0 0 0];  % kg*mm^2
+smiData.Solid(9).color = [0.792156862745098 0.81960784313725488 0.93333333333333335];
+smiData.Solid(9).opacity = 1;
+smiData.Solid(9).ID = 'Arm_Bucket_Left*:*Default';
+
+%Inertia Type - Custom
+%Visual Properties - Simple
+smiData.Solid(10).mass = 0.0055499999999999994;  % kg
+smiData.Solid(10).CoM = [0 0 2.5];  % mm
+smiData.Solid(10).MoI = [0.11562499999999999 2.5442124999999991 2.6367124999999998];  % kg*mm^2
+smiData.Solid(10).PoI = [0 0 0];  % kg*mm^2
+smiData.Solid(10).color = [0.792156862745098 0.81960784313725488 0.93333333333333335];
+smiData.Solid(10).opacity = 1;
+smiData.Solid(10).ID = 'Arm_Bucket_Right*:*Default';
+
+%Inertia Type - Custom
+%Visual Properties - Simple
+smiData.Solid(11).mass = 0.010239999999999999;  % kg
+smiData.Solid(11).CoM = [0 0 2.5];  % mm
+smiData.Solid(11).MoI = [0.89514666666666665 3.5165866666666661 4.369066666666666];  % kg*mm^2
+smiData.Solid(11).PoI = [0 0 0];  % kg*mm^2
+smiData.Solid(11).color = [0.792156862745098 0.81960784313725488 0.93333333333333335];
+smiData.Solid(11).opacity = 1;
+smiData.Solid(11).ID = 'Arm_Bucket_Bottom*:*Default';
+
+%Inertia Type - Custom
+%Visual Properties - Simple
+smiData.Solid(6).mass = 0.010240000000000003;  % kg
+smiData.Solid(6).CoM = [0 0 2.5];  % mm
+smiData.Solid(6).MoI = [0.89514666666666687 3.5165866666666692 4.3690666666666695];  % kg*mm^2
+smiData.Solid(6).PoI = [0 0 0];  % kg*mm^2
+smiData.Solid(6).color = [0.792156862745098 0.81960784313725488 0.93333333333333335];
+smiData.Solid(6).opacity = 1;
+smiData.Solid(6).ID = 'Arm_Bucket_Top*:*Default';
+
 %Inertia Type - Custom
 %Visual Properties - Simple
 smiData.Solid(1).mass = 0.029934613964194032;  % kg
@@ -448,16 +511,6 @@ smiData.Solid(5).ID = 'Base_Feet_1*:*47065T992';
 
 %Inertia Type - Custom
 %Visual Properties - Simple
-smiData.Solid(6).mass = 0.010240000000000003;  % kg
-smiData.Solid(6).CoM = [0 0 2.5];  % mm
-smiData.Solid(6).MoI = [0.89514666666666687 3.5165866666666692 4.3690666666666695];  % kg*mm^2
-smiData.Solid(6).PoI = [0 0 0];  % kg*mm^2
-smiData.Solid(6).color = [0.792156862745098 0.81960784313725488 0.93333333333333335];
-smiData.Solid(6).opacity = 1;
-smiData.Solid(6).ID = 'Arm_Bucket_Top*:*Default';
-
-%Inertia Type - Custom
-%Visual Properties - Simple
 smiData.Solid(7).mass = 0.035212232396786954;  % kg
 smiData.Solid(7).CoM = [-0.00056087233551827009 -0.0015499856088251965 0.28983577093615032];  % in
 smiData.Solid(7).MoI = [0.012307168897127673 0.012316388479138633 0.021745848342075505];  % kg*in^2
@@ -478,36 +531,6 @@ smiData.Solid(8).ID = 'Motor*:*Default';
 
 %Inertia Type - Custom
 %Visual Properties - Simple
-smiData.Solid(9).mass = 0.0055499999999999994;  % kg
-smiData.Solid(9).CoM = [0 0 2.5];  % mm
-smiData.Solid(9).MoI = [0.11562499999999998 2.5442124999999991 2.6367124999999998];  % kg*mm^2
-smiData.Solid(9).PoI = [0 0 0];  % kg*mm^2
-smiData.Solid(9).color = [0.792156862745098 0.81960784313725488 0.93333333333333335];
-smiData.Solid(9).opacity = 1;
-smiData.Solid(9).ID = 'Arm_Bucket_Left*:*Default';
-
-%Inertia Type - Custom
-%Visual Properties - Simple
-smiData.Solid(10).mass = 0.0055499999999999994;  % kg
-smiData.Solid(10).CoM = [0 0 2.5];  % mm
-smiData.Solid(10).MoI = [0.11562499999999999 2.5442124999999991 2.6367124999999998];  % kg*mm^2
-smiData.Solid(10).PoI = [0 0 0];  % kg*mm^2
-smiData.Solid(10).color = [0.792156862745098 0.81960784313725488 0.93333333333333335];
-smiData.Solid(10).opacity = 1;
-smiData.Solid(10).ID = 'Arm_Bucket_Right*:*Default';
-
-%Inertia Type - Custom
-%Visual Properties - Simple
-smiData.Solid(11).mass = 0.010239999999999999;  % kg
-smiData.Solid(11).CoM = [0 0 2.5];  % mm
-smiData.Solid(11).MoI = [0.89514666666666665 3.5165866666666661 4.369066666666666];  % kg*mm^2
-smiData.Solid(11).PoI = [0 0 0];  % kg*mm^2
-smiData.Solid(11).color = [0.792156862745098 0.81960784313725488 0.93333333333333335];
-smiData.Solid(11).opacity = 1;
-smiData.Solid(11).ID = 'Arm_Bucket_Bottom*:*Default';
-
-%Inertia Type - Custom
-%Visual Properties - Simple
 smiData.Solid(12).mass = 0.00022400000000000005;  % kg
 smiData.Solid(12).CoM = [0 0 0];  % mm
 smiData.Solid(12).MoI = [0.0039573333333333344 0.0039573333333333344 0.00059733333333333361];  % kg*mm^2
@@ -515,26 +538,6 @@ smiData.Solid(12).PoI = [0 0 0];  % kg*mm^2
 smiData.Solid(12).color = [0.75294117647058822 0.75294117647058822 0.75294117647058822];
 smiData.Solid(12).opacity = 1;
 smiData.Solid(12).ID = '98870A715_MACHINE KEY*:*98870A715';
-
-%Inertia Type - Custom
-%Visual Properties - Simple
-smiData.Solid(13).mass = 0.14499999999999999;  % kg
-smiData.Solid(13).CoM = [0 0 0];  % mm
-smiData.Solid(13).MoI = [57.5505 57.550500000000014 57.5505];  % kg*mm^2
-smiData.Solid(13).PoI = [0 0 0];  % kg*mm^2
-smiData.Solid(13).color = [0.75294117647058822 0.75294117647058822 0.75294117647058822];
-smiData.Solid(13).opacity = 1;
-smiData.Solid(13).ID = 'Lacrosse Ball*:*Default';
-
-%Inertia Type - Custom
-%Visual Properties - Simple
-smiData.Solid(14).mass = 0.067176850047562575;  % kg
-smiData.Solid(14).CoM = [-1.0608973298934486e-07 -0.0059822809684237973 112.23915220572029];  % mm
-smiData.Solid(14).MoI = [287.05894052465658 286.03805179566132 3.5418154905399053];  % kg*mm^2
-smiData.Solid(14).PoI = [0.042101897998037714 5.8143642514866937e-07 -3.866476531164517e-08];  % kg*mm^2
-smiData.Solid(14).color = [0.792156862745098 0.81960784313725488 0.93333333333333335];
-smiData.Solid(14).opacity = 1;
-smiData.Solid(14).ID = 'Arm_Rod*:*Default';
 
 %Inertia Type - Custom
 %Visual Properties - Simple
