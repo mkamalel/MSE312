@@ -39,10 +39,6 @@ ki_q = 5;
 kd_q = 800;
 
 
-
-% plot(range_results(:,3))
-% ylim([-0.021 0.021])
-
 % Simscape model
 %Initialize the RigidTransform structure array by filling in null values.
 smiData.RigidTransform(48).translation = [0.0 0.0 0.0];
