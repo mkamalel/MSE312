@@ -1,9 +1,6 @@
-ball_y = out.ball_y;
-ball_x = out.ball_x;
+ball_y = output.ball_y;
+ball_x = output.ball_x;
 
-plot(ball_x.Data, ball_y.Data)
-hold on;
-plot(58.68986284e-3, 255.26554801e-3, 'x')
 
 % % Location where ball hits the ground (y = 0)
 % y_threshold = -y0;

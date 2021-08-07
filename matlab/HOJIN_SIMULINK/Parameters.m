@@ -25,8 +25,6 @@ J_arm = 0.0022994846; %kgm^2
 r_arm = 0.1805;
 J_load = J_arm + (J_ball + m_ball*r_arm^2) + J_rotor;
 
-plot(range_results(:,3))
-
 % Current Controller
 kp_c = 23;
 ki_c = 100;
@@ -41,6 +39,9 @@ ki_q = 5;
 kd_q = 800;
 
 
+
+% plot(range_results(:,3))
+% ylim([-0.021 0.021])
 
 % Simscape model
 %Initialize the RigidTransform structure array by filling in null values.

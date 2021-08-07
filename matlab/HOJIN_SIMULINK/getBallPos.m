@@ -21,6 +21,5 @@ y_time(index);
 x_data = ball_x.data(:);
 x_landing = x_data(index);
 x_pos = x_landing - (-x0); % Taken about x0 (x = 0).
-
 end
 
