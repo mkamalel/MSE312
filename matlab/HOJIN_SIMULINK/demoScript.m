@@ -8,9 +8,9 @@ run('Parameters.m')
 Simulation_Time = 1;    % Simulation times for 0.5, 1.2, 1.5 m
 
 i = 1;
-range_results = [];
-
-for x_desired = [0.30, 1.01, 1.35]
+range_results_sample = [];
+% [0.30, 1.01, 1.35]
+for x_desired = 0.2:0.01:1.5
     
     set_param('Quintic_Controller/x_desired','Value', num2str(x_desired));
     output = sim('Quintic_Controller', Simulation_Time);
@@ -21,7 +21,7 @@ for x_desired = [0.30, 1.01, 1.35]
     total_power = output.total_power.data(find(output.total_power.data(), 1, 'last'));
     return_time = output.return_time.data(find(output.return_time.data(), 1, 'last'));
     
-    range_results = [range_results; [x_desired, x_landing, x_landing-x_desired, y_max, total_power, return_time]]; 
+    range_results_sample = [range_results_sample; [x_desired, x_landing, x_landing-x_desired, y_max, total_power, return_time]]; 
 
     fprintf("\nTest " + i + '\n');
     fprintf(('x_desired = %.2f m\n'), x_desired);

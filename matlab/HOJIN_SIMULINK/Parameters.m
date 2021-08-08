@@ -39,6 +39,14 @@ ki_q = 5;
 kd_q = 800;
 
 
+% for i = 1:1:length(range_results(:,3))
+%     fprintf('Error = %.2f m\n', (range_results(i,3)))
+% end
+
+
+plot(range_results(:,3))
+ylim([-0.023 0.02])
+
 % Simscape model
 %Initialize the RigidTransform structure array by filling in null values.
 smiData.RigidTransform(48).translation = [0.0 0.0 0.0];
