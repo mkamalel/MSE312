@@ -13,8 +13,8 @@ range_results = [];
 fprintf('Angle Noise = %f hz\n', Angle_noise);
 fprintf('Velocity Noise = %f hz\n', Velocity_noise);
 fprintf('Current Noise = %f hz\n', Current_noise);
-% [0.30, 1.01, 1.35]
-for x_desired = 0.2:0.01:1.5
+
+for x_desired = [0.30, 1.01, 1.35]
     
     set_param('Quintic_Controller/x_desired','Value', num2str(x_desired));
     output = sim('Quintic_Controller', Simulation_Time);
