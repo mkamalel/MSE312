@@ -13,8 +13,8 @@ range_results = [];
 fprintf('Angle Noise = %f hz\n', Angle_noise);
 fprintf('Velocity Noise = %f hz\n', Velocity_noise);
 fprintf('Current Noise = %f hz\n', Current_noise);
-
-for x_desired = [0.30, 1.01, 1.35]
+% [0.30, 1.01, 1.35]
+for x_desired = 0.2:0.01:1.5
     
     set_param('Quintic_Controller/x_desired','Value', num2str(x_desired));
     output = sim('Quintic_Controller', Simulation_Time);
@@ -36,6 +36,7 @@ for x_desired = [0.30, 1.01, 1.35]
     fprintf(('total_power = %.4f W\n'), total_power);
     fprintf(('return_time_1 = %.4f s\n'), return_time_1);
     fprintf(('return_time_2 = %.4f s\n'), return_time_2);
+    
     
     figure();
     plot_title = sprintf("Test %d | x desired: %.2f | x landing = %.2f | y max = %.2f | total power = %.2f | return time 1 = %.2f, | return time 2 = %.2f",...

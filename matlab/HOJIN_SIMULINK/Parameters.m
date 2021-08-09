@@ -39,6 +39,12 @@ ki_q = 5;
 kd_q = 800;
 
 
+% plot(range_results(:,1),range_results(:,3))
+% title('Error (x desired - x landing)')
+% ylabel('Error (m)')
+% xlabel('x desired (m)')
+
+
 % Simscape model
 %Initialize the RigidTransform structure array by filling in null values.
 smiData.RigidTransform(48).translation = [0.0 0.0 0.0];
