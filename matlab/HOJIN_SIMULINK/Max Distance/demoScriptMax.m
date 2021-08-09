@@ -15,10 +15,10 @@ for W_cruise = [40, 40]
     
     set_param('Quintic_Controller_max_distance/test_num','Value', num2str(i));
     set_param('Quintic_Controller_max_distance/W_cruise','Value', num2str(W_cruise));
-    output = sim('Quintic_Controller_max_distance', Simulation_Time());
+    output = sim('Quintic_Controller_max_distance', Simulation_Time);
     
     x_landing = getBallPos(output.ball_y, output.ball_x);
-    y_max = max(output.ball_y.data()) - 0.02848783783;
+    y_max = max(output.ball_y.data()) - (-y0);
     
     total_power = output.total_power.data(find(output.total_power.data(), 1, 'last'));
     return_time_1 = output.return_time.data(find(output.return_time.data(), 1, 'last'));
