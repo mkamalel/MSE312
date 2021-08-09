@@ -1,4 +1,4 @@
-F_sampling = 128;
+F_sampling = 10000;
 Angle_noise = 0.000001;
 Velocity_noise = 0.000001;
 Current_noise = 0.000001;
